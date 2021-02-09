@@ -1,0 +1,39 @@
+import math
+
+mintime = math.inf
+
+i = 350
+j = 400
+k = 450
+
+if 0 < i and i < j and j < k and k < 500:
+
+  t1 = math.sqrt(i**2 + 350**2) / 800
+
+  d2 = math.sqrt((j-i)**2 + 2500)
+  cos2 = (j-i)/math.sqrt((j-i)**2 + 2500)
+  v2 = 100 * cos2 + math.sqrt(10000 * cos2**2 + 630000)
+  t2 = d2 / v2
+
+  d3 = math.sqrt((k-j)**2 + 2500)
+  cos3 = (k-j)/math.sqrt((k-j)**2 + 2500)
+  v3 = 200 * cos3 + math.sqrt(40000 * cos3**2 + 600000)
+  t3 = d3 / v3
+
+  d4 = math.sqrt((500-k)**2 + 2500)
+  cos4 = (500-k)/math.sqrt((500-k)**2 + 2500)
+  v4 = 300 * cos4 + math.sqrt(90000 * cos4**2 + 550000)
+  t4 = d4 / v4
+
+  time = (t1 + t2 + t3 + t4) * 2
+
+  if time < mintime:
+    mintime = time
+    i_index = i
+    j_index = j
+    k_index = k
+
+print('mintime: ' + str(mintime * 10))
+print('i-index: ' + str(i_index * 10))
+print('j-index: ' + str(j_index * 10))
+print('k-index: ' + str(k_index * 10))
